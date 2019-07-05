@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Question  Skips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question__skips.each do |question__skip| %>
+      <tr>
+        <td><%= link_to 'Show', question__skip %></td>
+        <td><%= link_to 'Edit', edit_question__skip_path(question__skip) %></td>
+        <td><%= link_to 'Destroy', question__skip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question  Skip', new_question__skip_path %>

@@ -1,0 +1,2 @@
+class QuestionSkip < ApplicationRecord
+end

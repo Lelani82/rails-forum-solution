@@ -1,0 +1,2 @@
+module QuestionSkipsHelper
+end

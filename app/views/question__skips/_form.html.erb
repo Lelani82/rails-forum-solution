@@ -1,0 +1,17 @@
+<%= form_with(model: question__skip, local: true) do |form| %>
+  <% if question__skip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question__skip.errors.count, "error") %> prohibited this question__skip from being saved:</h2>
+
+      <ul>
+      <% question__skip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
