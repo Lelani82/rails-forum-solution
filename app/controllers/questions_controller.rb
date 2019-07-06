@@ -11,8 +11,11 @@ class QuestionsController < ApplicationController
     end
 
     def create
-        Question.create(question_params)
-        redirect_to root_path
+        @question = Question.new(question_params)
+        if @question.valid?
+            @question.save
+            redirect_to Question.last
+        end
     end
 
     private

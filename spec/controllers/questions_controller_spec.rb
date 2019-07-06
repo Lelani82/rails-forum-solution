@@ -29,11 +29,11 @@ RSpec.describe QuestionsController, type: :controller do
   # Question. As you add validations to Question, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { email: "alice@example.com", body: "How do I use Rspec?"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { email: "", body: ""}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -42,10 +42,10 @@ RSpec.describe QuestionsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "returns a success response" do
+    it "redirect to root path" do
       Question.create! valid_attributes
       get :index, params: {}, session: valid_session
-      expect(response).to be_successful
+      expect(response).to redirect_to(root_path)
     end
   end
 
